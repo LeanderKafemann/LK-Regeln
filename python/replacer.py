@@ -1,9 +1,10 @@
 from naturalsize import listToInt, special_starter
 
-print("Booting replacer v3.0.0")
+print("Booting replacer v3.0.0 for LKR Online 1.0.0")
 print("replacer is part of Leander Kafemanns project bueroWebsite.")
+print("This version was modified for LK Regeln Online.")
 
-path = input("relativen Pfad angeben: ") or "C:/Users/Leander/Documents/Python/verschlüsseln_gesamt/büro_webseite/index.html"
+path = input("relativen Pfad angeben: ") or "C:/Users/Leander/source/repo/LK-Regeln/index.html"
 with open(path, "r", encoding="utf-8") as f:
     content_org = f.read()
 invalid = ["ß", "ü", "ö", "Ö", "ü", "ä", "Ä", "b&uuml;", " />"]
