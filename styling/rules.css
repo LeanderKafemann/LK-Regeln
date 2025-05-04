@@ -3,7 +3,15 @@
     margin-top: 60px; /* Passe diesen Wert an die Höhe deines Menübalkens an */
 }
 
-/* Für die collapsiblen Abstimmungsregeln */
+/* Für den zentrierten Flex-Container der Stimmregeln */
+.emoji-row {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center; /* Zentriert den Inhalt horizontal */
+}
+
+/* Standardstil für die collapsiblen Abstimmungsregeln */
 details.rules {
     margin-bottom: 0.5em;
     border: 1px solid #ddd;
@@ -29,9 +37,12 @@ details.rules p {
     font-weight: bold;
 }
 
-/* Stimmregeln nebeneinander */
-.emoji-row {
-    display: flex;
-    gap: 1em;
-    align-items: center;
+/* Für die speziellen Emoji-Regeln: Standard-Listenelemente (untereinander) */
+.special-emoji-ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.special-emoji-li {
+    margin-bottom: 0.5em;
 }
