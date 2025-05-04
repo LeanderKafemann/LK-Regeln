@@ -1,0 +1,17 @@
+{
+  "lang": "de-de",
+  "name": "LK-Regeln",
+  "short_name": "LKR",
+  "description": "grundlegende Abstimmungsregeln",
+  "orientation": "portrait-primary",
+  "start_url": "https://leanderkafemann.github.io/LK_Regeln/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./images/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
+  
