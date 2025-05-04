@@ -1,20 +1,31 @@
-/* Container, der sicherstellt, dass der Inhalt unter dem externen Menübalken angezeigt wird */
+/* Container, der sicherstellt, dass der Inhalt unter dem externen Menübalken erscheint */
 #rules-container {
-    margin-top: 60px; /* Passe diesen Wert an die Höhe deines Menübalkens an */
+    margin-top: 50px;
 }
 
-/* Für den zentrierten Flex-Container der Stimmregeln */
+/* Stimmregeln: Nebeneinander und zentriert */
 .emoji-row {
     display: flex;
     gap: 1em;
     align-items: center;
-    justify-content: center; /* Zentriert den Inhalt horizontal */
+    justify-content: center;
 }
 
-/* Standardstil für die collapsiblen Abstimmungsregeln */
+/* Spezielle Emoji-Aktionen: Flex-Container, der die Items nebeneinander anordnet und bei Bedarf umbrechen lässt */
+.special-emoji-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.special-emoji-item {
+    /*bei Bedarf*/
+}
+
+/* Standardstil für collapsible Abstimmungsregeln */
 details.rules {
     margin-bottom: 0.5em;
-    border: 1px solid #ddd;
     padding: 0.5em;
     border-radius: 4px;
 }
@@ -29,20 +40,10 @@ details.rules p {
     margin: 0.5em 0 0;
 }
 
-/* Emoji-Styling */
+/* Gemeinsames Emoji-Styling */
 .emoji-rule {
     background: #e9ecef;
     padding: 4px 8px;
     border-radius: 4px;
     font-weight: bold;
-}
-
-/* Für die speziellen Emoji-Regeln: Standard-Listenelemente (untereinander) */
-.special-emoji-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.special-emoji-li {
-    margin-bottom: 0.5em;
 }
