@@ -1,10 +1,9 @@
-section {
-    margin-bottom: 2rem;
+#rules-container {
+    margin-top: 50px;
 }
-/* Einheitlicher Abstand zwischen den collapsiblen Regeln */
+
 details.rules {
     margin-bottom: 0.5em;
-    border: 1px solid #ddd;
     padding: 0.5em;
     border-radius: 4px;
 }
@@ -12,6 +11,11 @@ details.rules {
 summary {
     cursor: pointer;
     outline: none;
+    font-weight: bold;
+}
+
+details.rules p {
+    margin: 0.5em 0 0;
 }
 
 .emoji-rule {
