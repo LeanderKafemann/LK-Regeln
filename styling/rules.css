@@ -1,64 +1,22 @@
-ol.rule-list {
-    list-style: none;
-    counter-reset: rule-counter;
-    margin: 0;
-    padding-left: 0;
+section {
+    margin-bottom: 2rem;
+}
+/* Einheitlicher Abstand zwischen den collapsiblen Regeln */
+details.rules {
+    margin-bottom: 0.5em;
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    border-radius: 4px;
 }
 
-    ol.rule-list > li.rules {
-        counter-increment: rule-counter;
-        margin-bottom: 0.5em;
-        position: relative;
-        padding-left: 2em;
-    }
-
-        ol.rule-list > li.rules::before {
-            content: counter(rule-counter) ". ";
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-ol.sublist {
-    list-style: none;
-    counter-reset: subcounter;
-    margin: 0;
-    padding-left: 0;
+summary {
+    cursor: pointer;
+    outline: none;
 }
-
-    ol.sublist > li.rules {
-        counter-increment: subcounter;
-        margin-bottom: 0.5em;
-        position: relative;
-        padding-left: 2em;
-    }
-
-        ol.sublist > li.rules::before {
-            content: counter(subcounter, lower-alpha) ". ";
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-.emoji-row {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-    .emoji-row li.rules {
-        display: inline-block;
-        margin-right: 1em;
-        margin-bottom: 0.5em;
-    }
 
 .emoji-rule {
     background: #e9ecef;
     padding: 4px 8px;
     border-radius: 4px;
     font-weight: bold;
-}
-
-section {
-    margin-bottom: 2rem;
 }
