@@ -10,19 +10,11 @@ SCHABL = """<div class="oval">
                         {}
                     {}</p>
                 </font>
-                <div class="like" id="{}" style="">?</div><button onclick="setLike('{}')" type="button" class="likeButton">&#128151;</button>
-                <div id="{}Comments"></div>
-                <textarea id="{}CommentText" placeholder="Kommentieren..."></textarea><br />
-                <input type="submit" class="login_button" value="Kommentar senden" onclick="comment('{}')" />
-                <script>
-                    getContent("{}");
-                </script>
             </div>"""
 
 def export():
     title = c.titel.get("1.0", END).rstrip()
     content = c.inhalt.get("1.0", END).rstrip().replace("\n", "<br/>\n"+24*" ")
-    id_ = title.lower().replace(" ", "").replace(".", "_").replace("ü", "ue")
     styling1 = c.styling.replace(" ", "").replace("bold", "<b>").replace("italic", "<i>")
     styling2 = "<i><b>" if styling1 == "<b><i>" else styling1
     styling2 = styling2.replace("<", "</")
@@ -32,7 +24,7 @@ def export():
     if c.stroke:
         styling1 += "<s>"
         styling2 = "</s>"+styling2
-    to_export = SCHABL.format(c.color, title, styling1, content, styling2, id_, id_, id_, id_, id_, id_)
+    to_export = SCHABL.format(c.color, title, styling1, content, styling2)
     pyperclip.copy(to_export)
     py.alert((to_export if len(to_export) < 3000 else "Content too long")+"\n\nin die Zwischenablage kopiert.", "Kopiert")
 
@@ -67,7 +59,7 @@ def reset():
     c.colorB.config(background=c.color)
 
 root = Tk()
-root.title("BüroGuide ContentCreator")
+root.title("BüroGuide ContentCreator for LKR")
 
 c = Canvas(root, width=650, height=850)
 c.configure(bg="light blue")
@@ -83,7 +75,7 @@ c.underline = False
 c.stroke = False
 
 c.create_text(325, 60, text="  Büro Guide  \nContent Creator", font=("Verdana", "30", "bold"))
-c.create_text(325, 840, text="Copyright LK 2024-2025  -  Version 3.3.1", font=("Verdana", "10"))
+c.create_text(325, 840, text="Copyright LK 2024-2025  -  Version 3.3.1 - modified for LKR 1.0.0", font=("Verdana", "10"))
 
 c.create_text(20, 200, text="Titel:", font=("Verdana", "20"), anchor="w")
 c.create_text(325, 270, text="Inhalt:", font=("Verdana", "25"))
