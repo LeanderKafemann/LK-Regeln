@@ -7,22 +7,29 @@
     <title>LK-Regeln</title>
     <meta name="author" content="Leander Kafemann" />
     <meta name="keywords" content="Leander Kafemann Latein LK-Regeln LKunited King Lele" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="7B0CF-ClfZaLgOrvs32NkRIFktgrLNCGxIwQPBNUqBs" />
+    
+    <!-- Original stylesheets -->
     <link rel="stylesheet" href="https://leanderkafemann.github.io/bueroWebsite/styling/style.css" />
     <link rel="stylesheet" href="https://leanderkafemann.github.io/bueroWebsite/styling/box.css" />
     <link rel="stylesheet" href="https://leanderkafemann.github.io/bueroWebsite/styling/forms.css" />
     <link rel="stylesheet" href="./styling/rules.css" />
+    
+    <!-- New modern styling (will override previous styles) -->
+    <link rel="stylesheet" href="./styling/style.css" />
+    
     <link rel="manifest" href="./manifest.json" />
     <script type="text/javascript" src="https://leanderkafemann.github.io/bueroWebsite/js/cookies.js"></script>
     <link rel="icon" type="image/png" href="./images/logo.png" />
-    <meta charset="utf-8" />
-    <meta name="google-site-verification" content="7B0CF-ClfZaLgOrvs32NkRIFktgrLNCGxIwQPBNUqBs" />
 </head>
 <body>
     <div class="navbar">
-        <nav style="float: left;">
+        <nav>
             <ul>
-                <li style="margin: 0;">
-                    <a href="#" style="padding: 0;">
+                <li>
+                    <a href="#">
                         <img style="height: 45px; width: 45px;" src="./images/logo.png" alt="logo" />
                     </a>
                 </li>
@@ -37,242 +44,250 @@
             </ul>
         </nav>
     </div>
-    <h1 style="font-size: 48px;" id="home"><u>LK-Regeln 7.5</u></h1>
-    <h2>Aktuelles</h2>
-    <div class="oval">
-        <font color="black">
+
+    <div class="container">
+        <h1 id="home"><u>LK-Regeln 7.5</u></h1>
+        
+        <h2>Aktuelles</h2>
+        <div class="oval">
             <h3>LK-Regeln Online</h3>
             <p>
-                Die LK-Regeln sind jetzt in Form dieser Seite jederzeit online abrufbar.<br />
-                <br />
-                Bei Erscheinen von Updates werden Sie in diesem Bereich darüber informiert.<br />
-                <br />
+                Die LK-Regeln sind jetzt in Form dieser Seite jederzeit online abrufbar.
+            </p>
+            <p>
+                Bei Erscheinen von Updates werden Sie in diesem Bereich darüber informiert.
+            </p>
+            <p>
                 LKR Online benutzt den BueroWebKit, jedoch mit eingeschränkten Funktionen, da Sie kein Konto benötigen.
             </p>
-        </font>
-    </div>
-    <h2 id="regeln">Regeln</h2>
-    <main class="oval">
-        <div id="rules-container">
-
-            <!-- Stimmregeln – Normale Emoji-Regeln (nebeneinander, ohne <details>) -->
-            <section>
-                <h2>Stimmregeln</h2>
-                <div class="emoji-row">
-                    <div><span class="emoji-rule">👍 = +1</span></div>
-                    <div><span class="emoji-rule">👎 = -1</span></div>
-                    <div><span class="emoji-rule">✅ = ±0</span></div>
-                </div>
-            </section>
-
-            <!-- Spezielle Emoji-Regeln ohne Beschriftungen -->
-            <section>
-                <h2>Spezielle Emoji-Regeln</h2>
-                <div class="special-emoji-row">
-                    <div class="special-emoji-item"><span class="emoji-rule">🛑 = Veto (-♾)</span></div>
-                    <div class="special-emoji-item"><span class="emoji-rule">💣 = Bombardieren (-4)</span></div>
-                    <div class="special-emoji-item"><span class="emoji-rule">Emoji = -1</span></div>
-                    <div class="special-emoji-item"><span class="emoji-rule">⚠️ = Newt für 12h</span></div>
-                    <div class="special-emoji-item"><span class="emoji-rule">🎉 = Feiern (+3)</span></div>
-                    <div class="special-emoji-item"><span class="emoji-rule">🙅‍♂️ = Bann</span></div>
-                    <div class="special-emoji-item"><span class="emoji-rule">⛔️ = Abstimmung über Bann eines Destruktiven (s. auch 30)</span></div>
-                    <div class="special-emoji-item"><span class="emoji-rule">🚫 = Abstimmung ohne Bombe/Feiern</span></div>
-                </div>
-            </section>
-
-            <!-- Abstimmungsregeln – Jeder Regeltext als collapsibles Segment (<details>) mit nur der Nummer im <summary>, alle via "open" aufgeklappt -->
-            <section>
-                <h2>Abstimmungsregeln</h2>
-
-                <details class="rules" open>
-                    <summary><strong>4.</strong></summary>
-                    <p>Wenn jeder abgestimmt hat, wird gezählt.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>5.</strong></summary>
-                    <p>a. Falls zur Auszählung alle Personen die Nachricht gelesen haben, wird auch gezählt.</p>
-                    <p>b. Ist der Vorschlag nicht unter den letzten 10 Nachrichten, muss, sobald alle die Nachricht gelesen haben und Regel 4./6. nicht eintritt, eine erinnernde Nachricht mit einer Frist von einer Stunde gesendet werden.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>6.</strong></summary>
-                    <p>Sollte bereits vor Regel 4 oder 5 das Ergebnis feststehen, wird gezählt. Dies ist der Fall, wenn Mitglieder, die noch nicht abgestimmt haben, das Ergebnis ohne Veto nicht mehr ändern können.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>7.</strong></summary>
-                    <p>Schummeln oder Destruktivitäten sind nicht angebracht.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>8.</strong></summary>
-                    <p>Sollte die neue Regelung explizit Personen unfair behandeln, können diese ihr Veto einlegen, was zu einer Diskussion führt. Ein Veto muss begründet werden. Ein Veto kann auch nach Ende der Abstimmung eingelegt werden, dann jedoch spätestens 30 Minuten nach dem Lesen der Nachricht.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>9.</strong></summary>
-                    <p>Fehlende Begründungen oder Gegenvorschläge können zu Nichtbeachtung führen. Man ist also angehalten, diese zu geben, kann aber auch bisweilen darauf verzichten.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>10.</strong></summary>
-                    <p>Eigene bestehende Vorschläge können als Gegenvorschlag genutzt werden.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>11.</strong></summary>
-                    <p>Der Betreiber ist im Normalfall der, der den Vorschlag gemacht hat.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>12.</strong></summary>
-                    <p>Der Betreiber des Vorschlages darf die Stimmlage zwar eigenständig angeben, muss aber seine Angaben begründen können.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>13.</strong></summary>
-                    <p>Im Rahmen dessen kann der Betreiber Personen mit zu destruktivem Vorgehen als invalid abtun, auch wenn diese ihre Destruktivität nicht einsehen.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>14.</strong></summary>
-                    <p>Wenn der Betreiber mehrere Destruktivitäten missachtet, ist er dumm und kann abgesetzt werden.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>15.</strong></summary>
-                    <p>Pro Person maximal 3 Vorschläge.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>16.</strong></summary>
-                    <p>Diese Regeln können später noch auf eine neue Version geupdated werden.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>17.</strong></summary>
-                    <p>Wenn man einen Vorschlag für überflüssig oder unangebracht hält, kann man ihn bombardieren.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>18.</strong></summary>
-                    <p>JustForFun-Vorschläge haben keine Bedeutung und können nicht durchgesetzt werden.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>19.</strong></summary>
-                    <p>Vorschläge dürfen keine anderen Vorschläge verbieten.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>20.</strong></summary>
-                    <p>Hierarchien haben keinen Effekt auf die Abstimmung, auch nicht bei Unentschieden, außer es ist keine Stichwahl möglich und dies ist die einzige Lösung.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>21.</strong></summary>
-                    <p>a. Kein SPAM!</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>22.</strong></summary>
-                    <p>Ein Vorschlag darf keine Personen ungerechtfertigt benachteiligen (s. Regel 8), außer zum Ausgleich bestehender Nachteile.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>23.</strong></summary>
-                    <p>Vorschläge dürfen in der Regel nicht außerhalb der betroffenen Gruppe gelten.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>24.</strong></summary>
-                    <p>Beleidigungen etc. führen zu Stumm.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>25.</strong></summary>
-                    <p>Sollte man den Vorschlag als unbedingt notwendig ansehen, kann man ihn feiern.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>26.</strong></summary>
-                    <p>Unberechtigtes Veto/Feiern führt zur Bannung (Newt*Nutzer-1).</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>27.</strong></summary>
-                    <p>Alle Stimmen zählen so viel wie oben angezeigt.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>28.</strong></summary>
-                    <p>Das Abstimmungsverhalten kann die Position in der Hierarchie nicht beeinflussen.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>29.</strong></summary>
-                    <p>Meinungsabfragen bzw. Meinungen, Fakten oder ähnliches sind nicht abstimmungswürdig und entsprechende Abstimmungen sind zu ignorieren.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>30.</strong></summary>
-                    <p>Eine Abstimmung als invalid (Regel 13) muss als Nachricht erfolgen und fungiert als eigene Abstimmung nach diesen Regeln, die 10 Minuten andauert und an der Betreiber und Destruktiver nicht teilhaben können. Findet sich in diesen 10 Minuten eine Mehrheit für den angeklagten Destruktiven, wird der Betreiber abgesetzt, sonst der Destruktive gebannt.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>31.</strong></summary>
-                    <p>Ein Vorschlag zum Absetzen der LK-Regeln oder von Teilen dieser benötigt mindestens die +Anzahl aller abstimmungsberechtigten Mitglieder Stimmen nach Abzug der Gegenstimmen und darf keine Bombe/Veto bekommen. Ein Zeitlimit darf hier nicht gesetzt werden, alle müssen abstimmen.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>32.</strong></summary>
-                    <p>Der Betreiber kann Bombe/Feiern für bestimmte Vorschläge deaktivieren, bei denen dies keinen Sinn ergeben würde.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>33.</strong></summary>
-                    <p>Bevor weitere Regeln hinzukommen können, müssen sie durch eine Abstimmung bestätigt worden sein.</p>
-                </details>
-
-                <details class="rules" open>
-                    <summary><strong>34.</strong></summary>
-                    <p>Vorschläge, über die schon einmal abgestimmt wurde, und für die es keinen außerordentlichen Anlass gibt, zählen als SPAM.</p>
-                </details>
-
-            </section>
-
         </div>
 
 
-    </main>
-    <div style="display: block;">
-        <h2 id="weblinks">Weblinks</h2>
-        <p>
-            Zum Entwickler:<br />
-            <a href="https://github.com/LeanderKafemann/LK-Regeln">GitHub-Repository dieser Seite</a><br />
-            <a href="https://github.com/LeanderKafemann">GitHub-Seite vom Entwickler</a><br />
-            <a href="https://pypi.org/user/LK-Software/">PyPi-Seite vom Entwickler</a><br /><br />
-            Zu GitHub:<br />
-            <a href="https://de.wikipedia.org/wiki/GitHub">Wikipedia-Eintrag zu GitHub</a>
-        </p>
-    </div>
-    <div style="display: block;">
-        <h2 id="hinweise">Hinweise</h2>
-        <p>
-            Noch keine Hinweise hier...
-        </p>
-        <p>
+        <h2 id="regeln">Regeln</h2>
+        <main class="oval">
+            <div id="rules-container">
+    
+                <!-- Stimmregeln – Normale Emoji-Regeln (nebeneinander, ohne <details>) -->
+                <section>
+                    <h2>Stimmregeln</h2>
+                    <div class="emoji-row">
+                        <div><span class="emoji-rule">👍 = +1</span></div>
+                        <div><span class="emoji-rule">👎 = -1</span></div>
+                        <div><span class="emoji-rule">✅ = ±0</span></div>
+                    </div>
+                </section>
+    
+                <!-- Spezielle Emoji-Regeln ohne Beschriftungen -->
+                <section>
+                    <h2>Spezielle Emoji-Regeln</h2>
+                    <div class="special-emoji-row">
+                        <div class="special-emoji-item"><span class="emoji-rule">🛑 = Veto (-♾)</span></div>
+                        <div class="special-emoji-item"><span class="emoji-rule">💣 = Bombardieren (-4)</span></div>
+                        <div class="special-emoji-item"><span class="emoji-rule">Emoji = -1</span></div>
+                        <div class="special-emoji-item"><span class="emoji-rule">⚠️ = Newt für 12h</span></div>
+                        <div class="special-emoji-item"><span class="emoji-rule">🎉 = Feiern (+3)</span></div>
+                        <div class="special-emoji-item"><span class="emoji-rule">🙅‍♂️ = Bann</span></div>
+                        <div class="special-emoji-item"><span class="emoji-rule">⛔️ = Abstimmung über Bann eines Destruktiven (s. auch 30)</span></div>
+                        <div class="special-emoji-item"><span class="emoji-rule">🚫 = Abstimmung ohne Bombe/Feiern</span></div>
+                    </div>
+                </section>
+    
+                <!-- Abstimmungsregeln – Jeder Regeltext als collapsibles Segment (<details>) mit nur der Nummer im <summary>, alle via "open" aufgeklappt -->
+                <section>
+                    <h2>Abstimmungsregeln</h2>
+    
+                    <details class="rules" open>
+                        <summary><strong>4.</strong></summary>
+                        <p>Wenn jeder abgestimmt hat, wird gezählt.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>5.</strong></summary>
+                        <p>a. Falls zur Auszählung alle Personen die Nachricht gelesen haben, wird auch gezählt.</p>
+                        <p>b. Ist der Vorschlag nicht unter den letzten 10 Nachrichten, muss, sobald alle die Nachricht gelesen haben und Regel 4./6. nicht eintritt, eine erinnernde Nachricht mit einer Frist von einer Stunde gesendet werden.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>6.</strong></summary>
+                        <p>Sollte bereits vor Regel 4 oder 5 das Ergebnis feststehen, wird gezählt. Dies ist der Fall, wenn Mitglieder, die noch nicht abgestimmt haben, das Ergebnis ohne Veto nicht mehr ändern können.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>7.</strong></summary>
+                        <p>Schummeln oder Destruktivitäten sind nicht angebracht.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>8.</strong></summary>
+                        <p>Sollte die neue Regelung explizit Personen unfair behandeln, können diese ihr Veto einlegen, was zu einer Diskussion führt. Ein Veto muss begründet werden. Ein Veto kann auch nach Ende der Abstimmung eingelegt werden, dann jedoch spätestens 30 Minuten nach dem Lesen der Nachricht.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>9.</strong></summary>
+                        <p>Fehlende Begründungen oder Gegenvorschläge können zu Nichtbeachtung führen. Man ist also angehalten, diese zu geben, kann aber auch bisweilen darauf verzichten.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>10.</strong></summary>
+                        <p>Eigene bestehende Vorschläge können als Gegenvorschlag genutzt werden.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>11.</strong></summary>
+                        <p>Der Betreiber ist im Normalfall der, der den Vorschlag gemacht hat.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>12.</strong></summary>
+                        <p>Der Betreiber des Vorschlages darf die Stimmlage zwar eigenständig angeben, muss aber seine Angaben begründen können.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>13.</strong></summary>
+                        <p>Im Rahmen dessen kann der Betreiber Personen mit zu destruktivem Vorgehen als invalid abtun, auch wenn diese ihre Destruktivität nicht einsehen.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>14.</strong></summary>
+                        <p>Wenn der Betreiber mehrere Destruktivitäten missachtet, ist er dumm und kann abgesetzt werden.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>15.</strong></summary>
+                        <p>Pro Person maximal 3 Vorschläge.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>16.</strong></summary>
+                        <p>Diese Regeln können später noch auf eine neue Version geupdated werden.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>17.</strong></summary>
+                        <p>Wenn man einen Vorschlag für überflüssig oder unangebracht hält, kann man ihn bombardieren.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>18.</strong></summary>
+                        <p>JustForFun-Vorschläge haben keine Bedeutung und können nicht durchgesetzt werden.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>19.</strong></summary>
+                        <p>Vorschläge dürfen keine anderen Vorschläge verbieten.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>20.</strong></summary>
+                        <p>Hierarchien haben keinen Effekt auf die Abstimmung, auch nicht bei Unentschieden, außer es ist keine Stichwahl möglich und dies ist die einzige Lösung.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>21.</strong></summary>
+                        <p>a. Kein SPAM!</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>22.</strong></summary>
+                        <p>Ein Vorschlag darf keine Personen ungerechtfertigt benachteiligen (s. Regel 8), außer zum Ausgleich bestehender Nachteile.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>23.</strong></summary>
+                        <p>Vorschläge dürfen in der Regel nicht außerhalb der betroffenen Gruppe gelten.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>24.</strong></summary>
+                        <p>Beleidigungen etc. führen zu Stumm.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>25.</strong></summary>
+                        <p>Sollte man den Vorschlag als unbedingt notwendig ansehen, kann man ihn feiern.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>26.</strong></summary>
+                        <p>Unberechtigtes Veto/Feiern führt zur Bannung (Newt*Nutzer-1).</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>27.</strong></summary>
+                        <p>Alle Stimmen zählen so viel wie oben angezeigt.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>28.</strong></summary>
+                        <p>Das Abstimmungsverhalten kann die Position in der Hierarchie nicht beeinflussen.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>29.</strong></summary>
+                        <p>Meinungsabfragen bzw. Meinungen, Fakten oder ähnliches sind nicht abstimmungswürdig und entsprechende Abstimmungen sind zu ignorieren.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>30.</strong></summary>
+                        <p>Eine Abstimmung als invalid (Regel 13) muss als Nachricht erfolgen und fungiert als eigene Abstimmung nach diesen Regeln, die 10 Minuten andauert und an der Betreiber und Destruktiver nicht teilhaben können. Findet sich in diesen 10 Minuten eine Mehrheit für den angeklagten Destruktiven, wird der Betreiber abgesetzt, sonst der Destruktive gebannt.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>31.</strong></summary>
+                        <p>Ein Vorschlag zum Absetzen der LK-Regeln oder von Teilen dieser benötigt mindestens die +Anzahl aller abstimmungsberechtigten Mitglieder Stimmen nach Abzug der Gegenstimmen und darf keine Bombe/Veto bekommen. Ein Zeitlimit darf hier nicht gesetzt werden, alle müssen abstimmen.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>32.</strong></summary>
+                        <p>Der Betreiber kann Bombe/Feiern für bestimmte Vorschläge deaktivieren, bei denen dies keinen Sinn ergeben würde.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>33.</strong></summary>
+                        <p>Bevor weitere Regeln hinzukommen können, müssen sie durch eine Abstimmung bestätigt worden sein.</p>
+                    </details>
+    
+                    <details class="rules" open>
+                        <summary><strong>34.</strong></summary>
+                        <p>Vorschläge, über die schon einmal abgestimmt wurde, und für die es keinen außerordentlichen Anlass gibt, zählen als SPAM.</p>
+                    </details>
+    
+                </section>
+    
+            </div>
+    
+    
+        </main>
+
+        <div id="weblinks">
+            <h2>Weblinks</h2>
+            <p>
+                <strong>Zum Entwickler:</strong><br />
+                <a href="https://github.com/LeanderKafemann/LK-Regeln">GitHub-Repository dieser Seite</a><br />
+                <a href="https://github.com/LeanderKafemann">GitHub-Seite vom Entwickler</a><br />
+                <a href="https://pypi.org/user/LK-Software/">PyPi-Seite vom Entwickler</a>
+            </p>
+            <p>
+                <strong>Zu GitHub:</strong><br />
+                <a href="https://de.wikipedia.org/wiki/GitHub">Wikipedia-Eintrag zu GitHub</a>
+            </p>
+        </div>
+        
+        <div id="hinweise">
+            <h2>Hinweise</h2>
+            <p>
+                Noch keine Hinweise hier...
+            </p>
             <details>
                 <summary>AGB</summary>
                 <p>
                     Noch keine AGB...
                 </p>
             </details>
-        </p>
+        </div>
     </div>
-    <br /><br /><br /><br />
-    <div class="footer" id="footer" style="text-align: center;">
+    
+    <div class="footer" id="footer">
         <p class="footerText">
             Copyright Leander Kafemann 2023-2025 - BueroWebKit 3.3.16 - LK-Regeln Online 1.0.0 - LK-Regeln 7.5
         </p>
