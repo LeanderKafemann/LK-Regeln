@@ -10,32 +10,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="7B0CF-ClfZaLgOrvs32NkRIFktgrLNCGxIwQPBNUqBs" />
+    <meta name="description" content="LK-Regeln - Ein umfassendes Regelwerk für Abstimmungen und Gruppendiskussionen">
     
-    <!-- Original stylesheets -->
-    <link rel="stylesheet" href="https://leanderkafemann.github.io/bueroWebsite/styling/style.css" />
-    <link rel="stylesheet" href="https://leanderkafemann.github.io/bueroWebsite/styling/box.css" />
-    <link rel="stylesheet" href="https://leanderkafemann.github.io/bueroWebsite/styling/forms.css" />
-    <link rel="stylesheet" href="./styling/rules.css" />
-    
-    <!-- New modern styling (will override previous styles) -->
     <link rel="stylesheet" href="./styling/style.css" />
     
     <link rel="manifest" href="./manifest.json" />
     <script type="text/javascript" src="https://leanderkafemann.github.io/bueroWebsite/js/cookies.js"></script>
-    <link rel="icon" type="image/png" href="./images/logo.png" />
+    <script type="text/javascript" src="./js/modern-interactions.js"></script>
+    <link rel="icon" type="image/png" href="./images/logo2.png" />
 </head>
 <body>
     <div class="navbar">
-        <nav>
+        <nav class="nav-logo">
             <ul>
                 <li>
-                    <a href="#">
-                        <img style="height: 45px; width: 45px;" src="./images/logo.png" alt="logo" />
+                    <a href="">
+                        <img style="height: 45px; width: 45px;" src="./images/logo2.png" alt="logo" />
                     </a>
                 </li>
             </ul>
         </nav>
-        <nav>
+        
+        <!-- Hamburger menu button for mobile -->
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <nav class="nav-menu">
             <ul>
                 <li><a href="#" id="menu1">🏠 Home</a></li>
                 <li><a href="#regeln" id="menu2">🗎 Regeln</a></li>
@@ -45,215 +48,306 @@
         </nav>
     </div>
 
+    <style>
+        @media (max-width: 768px) {
+            .navbar {
+                display: flex;
+                flex-direction: row !important;
+                justify-content: space-between;
+                align-items: center;
+                height: 60px;
+                padding: 0 1rem;
+            }
+            
+            .navbar .nav-logo {
+                order: 1;
+            }
+            
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 21px;
+                cursor: pointer;
+                order: 2;
+                z-index: 1001;
+            }
+            
+            .menu-toggle span {
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: white;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+            
+            .navbar .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #2c3e50;
+                flex-direction: column;
+                padding-top: 80px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .navbar .nav-menu.active {
+                right: 0;
+            }
+            
+            .navbar .nav-menu ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .navbar .nav-menu li {
+                margin: 0;
+                width: 100%;
+            }
+            
+            .navbar .nav-menu a {
+                padding: 1rem 1.5rem;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+            
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+    </style>
+
     <div class="container">
         <h1 id="home"><u>LK-Regeln 7.5</u></h1>
-        
-        <h2>Aktuelles</h2>
-        <div class="oval">
-            <h3>LK-Regeln Online</h3>
-            <p>
-                Die LK-Regeln sind jetzt in Form dieser Seite jederzeit online abrufbar.
-            </p>
-            <p>
-                Bei Erscheinen von Updates werden Sie in diesem Bereich darüber informiert.
-            </p>
-            <p>
-                LKR Online benutzt den BueroWebKit, jedoch mit eingeschränkten Funktionen, da Sie kein Konto benötigen.
-            </p>
+        <div id="home">
+            <h2>Aktuelles</h2>
+            <div class="oval">
+                <h3>LK-Regeln Online</h3>
+                <p>
+                    Die LK-Regeln sind jetzt in Form dieser Seite jederzeit online abrufbar.
+                </p>
+                <p>
+                    Bei Erscheinen von Updates werden Sie in diesem Bereich darüber informiert.
+                </p>
+                <p>
+                    LKR Online benutzt den BueroWebKit, jedoch mit eingeschränkten Funktionen, da Sie kein Konto benötigen.
+                </p>
+            </div>
         </div>
-
-
+  
         <h2 id="regeln">Regeln</h2>
         <main class="oval">
-            <div id="rules-container">
-    
-                <!-- Stimmregeln – Normale Emoji-Regeln (nebeneinander, ohne <details>) -->
-                <section>
-                    <h2>Stimmregeln</h2>
-                    <div class="emoji-row">
-                        <div><span class="emoji-rule">👍 = +1</span></div>
-                        <div><span class="emoji-rule">👎 = -1</span></div>
-                        <div><span class="emoji-rule">✅ = ±0</span></div>
-                    </div>
-                </section>
-    
-                <!-- Spezielle Emoji-Regeln ohne Beschriftungen -->
-                <section>
-                    <h2>Spezielle Emoji-Regeln</h2>
-                    <div class="special-emoji-row">
-                        <div class="special-emoji-item"><span class="emoji-rule">🛑 = Veto (-♾)</span></div>
-                        <div class="special-emoji-item"><span class="emoji-rule">💣 = Bombardieren (-4)</span></div>
-                        <div class="special-emoji-item"><span class="emoji-rule">Emoji = -1</span></div>
-                        <div class="special-emoji-item"><span class="emoji-rule">⚠️ = Newt für 12h</span></div>
-                        <div class="special-emoji-item"><span class="emoji-rule">🎉 = Feiern (+3)</span></div>
-                        <div class="special-emoji-item"><span class="emoji-rule">🙅‍♂️ = Bann</span></div>
-                        <div class="special-emoji-item"><span class="emoji-rule">⛔️ = Abstimmung über Bann eines Destruktiven (s. auch 30)</span></div>
-                        <div class="special-emoji-item"><span class="emoji-rule">🚫 = Abstimmung ohne Bombe/Feiern</span></div>
-                    </div>
-                </section>
-    
-                <!-- Abstimmungsregeln – Jeder Regeltext als collapsibles Segment (<details>) mit nur der Nummer im <summary>, alle via "open" aufgeklappt -->
-                <section>
-                    <h2>Abstimmungsregeln</h2>
-    
-                    <details class="rules" open>
-                        <summary><strong>4.</strong></summary>
-                        <p>Wenn jeder abgestimmt hat, wird gezählt.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>5.</strong></summary>
-                        <p>a. Falls zur Auszählung alle Personen die Nachricht gelesen haben, wird auch gezählt.</p>
-                        <p>b. Ist der Vorschlag nicht unter den letzten 10 Nachrichten, muss, sobald alle die Nachricht gelesen haben und Regel 4./6. nicht eintritt, eine erinnernde Nachricht mit einer Frist von einer Stunde gesendet werden.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>6.</strong></summary>
-                        <p>Sollte bereits vor Regel 4 oder 5 das Ergebnis feststehen, wird gezählt. Dies ist der Fall, wenn Mitglieder, die noch nicht abgestimmt haben, das Ergebnis ohne Veto nicht mehr ändern können.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>7.</strong></summary>
-                        <p>Schummeln oder Destruktivitäten sind nicht angebracht.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>8.</strong></summary>
-                        <p>Sollte die neue Regelung explizit Personen unfair behandeln, können diese ihr Veto einlegen, was zu einer Diskussion führt. Ein Veto muss begründet werden. Ein Veto kann auch nach Ende der Abstimmung eingelegt werden, dann jedoch spätestens 30 Minuten nach dem Lesen der Nachricht.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>9.</strong></summary>
-                        <p>Fehlende Begründungen oder Gegenvorschläge können zu Nichtbeachtung führen. Man ist also angehalten, diese zu geben, kann aber auch bisweilen darauf verzichten.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>10.</strong></summary>
-                        <p>Eigene bestehende Vorschläge können als Gegenvorschlag genutzt werden.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>11.</strong></summary>
-                        <p>Der Betreiber ist im Normalfall der, der den Vorschlag gemacht hat.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>12.</strong></summary>
-                        <p>Der Betreiber des Vorschlages darf die Stimmlage zwar eigenständig angeben, muss aber seine Angaben begründen können.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>13.</strong></summary>
-                        <p>Im Rahmen dessen kann der Betreiber Personen mit zu destruktivem Vorgehen als invalid abtun, auch wenn diese ihre Destruktivität nicht einsehen.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>14.</strong></summary>
-                        <p>Wenn der Betreiber mehrere Destruktivitäten missachtet, ist er dumm und kann abgesetzt werden.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>15.</strong></summary>
-                        <p>Pro Person maximal 3 Vorschläge.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>16.</strong></summary>
-                        <p>Diese Regeln können später noch auf eine neue Version geupdated werden.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>17.</strong></summary>
-                        <p>Wenn man einen Vorschlag für überflüssig oder unangebracht hält, kann man ihn bombardieren.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>18.</strong></summary>
-                        <p>JustForFun-Vorschläge haben keine Bedeutung und können nicht durchgesetzt werden.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>19.</strong></summary>
-                        <p>Vorschläge dürfen keine anderen Vorschläge verbieten.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>20.</strong></summary>
-                        <p>Hierarchien haben keinen Effekt auf die Abstimmung, auch nicht bei Unentschieden, außer es ist keine Stichwahl möglich und dies ist die einzige Lösung.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>21.</strong></summary>
-                        <p>a. Kein SPAM!</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>22.</strong></summary>
-                        <p>Ein Vorschlag darf keine Personen ungerechtfertigt benachteiligen (s. Regel 8), außer zum Ausgleich bestehender Nachteile.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>23.</strong></summary>
-                        <p>Vorschläge dürfen in der Regel nicht außerhalb der betroffenen Gruppe gelten.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>24.</strong></summary>
-                        <p>Beleidigungen etc. führen zu Stumm.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>25.</strong></summary>
-                        <p>Sollte man den Vorschlag als unbedingt notwendig ansehen, kann man ihn feiern.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>26.</strong></summary>
-                        <p>Unberechtigtes Veto/Feiern führt zur Bannung (Newt*Nutzer-1).</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>27.</strong></summary>
-                        <p>Alle Stimmen zählen so viel wie oben angezeigt.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>28.</strong></summary>
-                        <p>Das Abstimmungsverhalten kann die Position in der Hierarchie nicht beeinflussen.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>29.</strong></summary>
-                        <p>Meinungsabfragen bzw. Meinungen, Fakten oder ähnliches sind nicht abstimmungswürdig und entsprechende Abstimmungen sind zu ignorieren.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>30.</strong></summary>
-                        <p>Eine Abstimmung als invalid (Regel 13) muss als Nachricht erfolgen und fungiert als eigene Abstimmung nach diesen Regeln, die 10 Minuten andauert und an der Betreiber und Destruktiver nicht teilhaben können. Findet sich in diesen 10 Minuten eine Mehrheit für den angeklagten Destruktiven, wird der Betreiber abgesetzt, sonst der Destruktive gebannt.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>31.</strong></summary>
-                        <p>Ein Vorschlag zum Absetzen der LK-Regeln oder von Teilen dieser benötigt mindestens die +Anzahl aller abstimmungsberechtigten Mitglieder Stimmen nach Abzug der Gegenstimmen und darf keine Bombe/Veto bekommen. Ein Zeitlimit darf hier nicht gesetzt werden, alle müssen abstimmen.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>32.</strong></summary>
-                        <p>Der Betreiber kann Bombe/Feiern für bestimmte Vorschläge deaktivieren, bei denen dies keinen Sinn ergeben würde.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>33.</strong></summary>
-                        <p>Bevor weitere Regeln hinzukommen können, müssen sie durch eine Abstimmung bestätigt worden sein.</p>
-                    </details>
-    
-                    <details class="rules" open>
-                        <summary><strong>34.</strong></summary>
-                        <p>Vorschläge, über die schon einmal abgestimmt wurde, und für die es keinen außerordentlichen Anlass gibt, zählen als SPAM.</p>
-                    </details>
-    
-                </section>
-    
+            <div id="regeln">
+                <div id="rules-container">
+        
+                    <!-- Stimmregeln – Normale Emoji-Regeln (nebeneinander, ohne <details>) -->
+                    <section>
+                        <h2>Stimmregeln</h2>
+                        <div class="emoji-row">
+                            <div><span class="emoji-rule">👍 = +1</span></div>
+                            <div><span class="emoji-rule">👎 = -1</span></div>
+                            <div><span class="emoji-rule">✅ = ±0</span></div>
+                        </div>
+                    </section>
+        
+                    <!-- Spezielle Emoji-Regeln ohne Beschriftungen -->
+                    <section>
+                        <h2>Spezielle Emoji-Regeln</h2>
+                        <div class="special-emoji-row">
+                            <div class="special-emoji-item"><span class="emoji-rule">🛑 = Veto (-♾)</span></div>
+                            <div class="special-emoji-item"><span class="emoji-rule">💣 = Bombardieren (-4)</span></div>
+                            <div class="special-emoji-item"><span class="emoji-rule">Emoji = -1</span></div>
+                            <div class="special-emoji-item"><span class="emoji-rule">⚠️ = Newt für 12h</span></div>
+                            <div class="special-emoji-item"><span class="emoji-rule">🎉 = Feiern (+3)</span></div>
+                            <div class="special-emoji-item"><span class="emoji-rule">🙅‍♂️ = Bann</span></div>
+                            <div class="special-emoji-item"><span class="emoji-rule">⛔️ = Abstimmung über Bann eines Destruktiven (s. auch 30)</span></div>
+                            <div class="special-emoji-item"><span class="emoji-rule">🚫 = Abstimmung ohne Bombe/Feiern</span></div>
+                        </div>
+                    </section>
+        
+                    <!-- Abstimmungsregeln – Jeder Regeltext als collapsibles Segment (<details>) mit nur der Nummer im <summary>, alle via "open" aufgeklappt -->
+                    <section>
+                        <h2>Abstimmungsregeln</h2>
+        
+                        <details class="rules" open>
+                            <summary><strong>4.</strong></summary>
+                            <p>Wenn jeder abgestimmt hat, wird gezählt.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>5.</strong></summary>
+                            <p>a. Falls zur Auszählung alle Personen die Nachricht gelesen haben, wird auch gezählt.</p>
+                            <p>b. Ist der Vorschlag nicht unter den letzten 10 Nachrichten, muss, sobald alle die Nachricht gelesen haben und Regel 4./6. nicht eintritt, eine erinnernde Nachricht mit einer Frist von einer Stunde gesendet werden.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>6.</strong></summary>
+                            <p>Sollte bereits vor Regel 4 oder 5 das Ergebnis feststehen, wird gezählt. Dies ist der Fall, wenn Mitglieder, die noch nicht abgestimmt haben, das Ergebnis ohne Veto nicht mehr ändern können.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>7.</strong></summary>
+                            <p>Schummeln oder Destruktivitäten sind nicht angebracht.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>8.</strong></summary>
+                            <p>Sollte die neue Regelung explizit Personen unfair behandeln, können diese ihr Veto einlegen, was zu einer Diskussion führt. Ein Veto muss begründet werden. Ein Veto kann auch nach Ende der Abstimmung eingelegt werden, dann jedoch spätestens 30 Minuten nach dem Lesen der Nachricht.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>9.</strong></summary>
+                            <p>Fehlende Begründungen oder Gegenvorschläge können zu Nichtbeachtung führen. Man ist also angehalten, diese zu geben, kann aber auch bisweilen darauf verzichten.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>10.</strong></summary>
+                            <p>Eigene bestehende Vorschläge können als Gegenvorschlag genutzt werden.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>11.</strong></summary>
+                            <p>Der Betreiber ist im Normalfall der, der den Vorschlag gemacht hat.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>12.</strong></summary>
+                            <p>Der Betreiber des Vorschlages darf die Stimmlage zwar eigenständig angeben, muss aber seine Angaben begründen können.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>13.</strong></summary>
+                            <p>Im Rahmen dessen kann der Betreiber Personen mit zu destruktivem Vorgehen als invalid abtun, auch wenn diese ihre Destruktivität nicht einsehen.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>14.</strong></summary>
+                            <p>Wenn der Betreiber mehrere Destruktivitäten missachtet, ist er dumm und kann abgesetzt werden.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>15.</strong></summary>
+                            <p>Pro Person maximal 3 Vorschläge.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>16.</strong></summary>
+                            <p>Diese Regeln können später noch auf eine neue Version geupdated werden.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>17.</strong></summary>
+                            <p>Wenn man einen Vorschlag für überflüssig oder unangebracht hält, kann man ihn bombardieren.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>18.</strong></summary>
+                            <p>JustForFun-Vorschläge haben keine Bedeutung und können nicht durchgesetzt werden.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>19.</strong></summary>
+                            <p>Vorschläge dürfen keine anderen Vorschläge verbieten.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>20.</strong></summary>
+                            <p>Hierarchien haben keinen Effekt auf die Abstimmung, auch nicht bei Unentschieden, außer es ist keine Stichwahl möglich und dies ist die einzige Lösung.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>21.</strong></summary>
+                            <p>a. Kein SPAM!</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>22.</strong></summary>
+                            <p>Ein Vorschlag darf keine Personen ungerechtfertigt benachteiligen (s. Regel 8), außer zum Ausgleich bestehender Nachteile.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>23.</strong></summary>
+                            <p>Vorschläge dürfen in der Regel nicht außerhalb der betroffenen Gruppe gelten.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>24.</strong></summary>
+                            <p>Beleidigungen etc. führen zu Stumm.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>25.</strong></summary>
+                            <p>Sollte man den Vorschlag als unbedingt notwendig ansehen, kann man ihn feiern.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>26.</strong></summary>
+                            <p>Unberechtigtes Veto/Feiern führt zur Bannung (Newt*Nutzer-1).</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>27.</strong></summary>
+                            <p>Alle Stimmen zählen so viel wie oben angezeigt.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>28.</strong></summary>
+                            <p>Das Abstimmungsverhalten kann die Position in der Hierarchie nicht beeinflussen.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>29.</strong></summary>
+                            <p>Meinungsabfragen bzw. Meinungen, Fakten oder ähnliches sind nicht abstimmungswürdig und entsprechende Abstimmungen sind zu ignorieren.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>30.</strong></summary>
+                            <p>Eine Abstimmung als invalid (Regel 13) muss als Nachricht erfolgen und fungiert als eigene Abstimmung nach diesen Regeln, die 10 Minuten andauert und an der Betreiber und Destruktiver nicht teilhaben können. Findet sich in diesen 10 Minuten eine Mehrheit für den angeklagten Destruktiven, wird der Betreiber abgesetzt, sonst der Destruktive gebannt.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>31.</strong></summary>
+                            <p>Ein Vorschlag zum Absetzen der LK-Regeln oder von Teilen dieser benötigt mindestens die +Anzahl aller abstimmungsberechtigten Mitglieder Stimmen nach Abzug der Gegenstimmen und darf keine Bombe/Veto bekommen. Ein Zeitlimit darf hier nicht gesetzt werden, alle müssen abstimmen.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>32.</strong></summary>
+                            <p>Der Betreiber kann Bombe/Feiern für bestimmte Vorschläge deaktivieren, bei denen dies keinen Sinn ergeben würde.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>33.</strong></summary>
+                            <p>Bevor weitere Regeln hinzukommen können, müssen sie durch eine Abstimmung bestätigt worden sein.</p>
+                        </details>
+        
+                        <details class="rules" open>
+                            <summary><strong>34.</strong></summary>
+                            <p>Vorschläge, über die schon einmal abgestimmt wurde, und für die es keinen außerordentlichen Anlass gibt, zählen als SPAM.</p>
+                        </details>
+        
+                    </section>
+        
+                </div>
             </div>
     
     
@@ -292,5 +386,146 @@
             Copyright Leander Kafemann 2023-2025 - BueroWebKit 3.3.16 - LK-Regeln Online 1.0.0 - LK-Regeln 7.5
         </p>
     </div>
+
+    <script>
+        
+        // Mobile menu toggle functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const body = document.body;
+        
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', function() {
+                // Toggle active classes
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+        
+            // Close menu when clicking a link
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+        
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideMenu = navMenu.contains(event.target);
+                const isClickOnToggle = menuToggle.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const homeHeading = document.querySelector('h1#home');
+            const homeDiv = document.querySelector('div#home');
+            const regelnHeading = document.querySelector('h2#regeln');
+            const regelnDiv = document.querySelector('div#regeln');
+            
+            if (homeDiv) homeDiv.id = 'home-content';
+            if (regelnDiv) regelnDiv.id = 'regeln-content';
+            
+            const navbar = document.querySelector('.navbar');
+            const navLinks = document.querySelectorAll('.navbar a');
+            
+            const navMapping = {
+                '#': 'home',
+                '#regeln': 'regeln',
+                '#weblinks': 'weblinks',
+                '#hinweise': 'hinweise'
+            };
+            
+            const sections = [];
+            Object.values(navMapping).forEach(id => {
+                const element = document.getElementById(id);
+                if (element) sections.push(element);
+            });
+            
+            const backToTopButton = document.createElement('div');
+            backToTopButton.className = 'back-to-top';
+            backToTopButton.innerHTML = '↑';
+            backToTopButton.setAttribute('title', 'Nach oben scrollen');
+            document.body.appendChild(backToTopButton);
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                
+                if (scrollPosition > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+                
+                if (scrollPosition > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                let currentSection = '';
+                let closestSection = null;
+                let closestDistance = Infinity;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    const distanceFromTop = Math.abs(scrollPosition - sectionTop);
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSection = section.id;
+                        return;
+                    }
+                    
+                    if (distanceFromTop < closestDistance) {
+                        closestDistance = distanceFromTop;
+                        closestSection = section;
+                    }
+                });
+                
+                if (!currentSection && closestSection) {
+                    currentSection = closestSection.id;
+                }
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    
+                    const targetSection = navMapping[href];
+                    
+                    if (targetSection === currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            document.querySelectorAll('details.rules').forEach(details => {
+                const summary = details.querySelector('summary');
+                
+                summary.addEventListener('click', function(e) {
+                    if (!details.open) {
+                        details.classList.add('opening');
+                        setTimeout(() => {
+                            details.classList.remove('opening');
+                        }, 300);
+                    }
+                });
+            });
+            
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
 </body>
 </html>
